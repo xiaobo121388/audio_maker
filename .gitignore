@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+dist/
+*.egg-info/
+mcsfx.toml
+.env
+.env.*
+outputs/
+.mcsfx/

@@ -1,0 +1,57 @@
+# This file contains environment variable NAMES, never actual API keys.
+[profiles.grok]
+protocol = "xai"
+preset = "grok-edit"
+base_url = "https://api.x.ai/v1"
+model = "grok-imagine-video"
+api_key_env = "XAI_API_KEY"
+transport = "data_uri"
+
+[profiles.grok-sfx]
+protocol = "xai"
+preset = "grok-keyframe"
+base_url = "https://api.x.ai/v1"
+model = "grok-imagine-video"
+api_key_env = "XAI_API_KEY"
+transport = "data_uri"
+download_mode = "public"
+# For the content-endpoint relay, REPLACE the two values above with:
+# base_url = "https://ai.xiaobo12138.site/v1"
+# download_mode = "same_origin_content"
+# This authenticates only /v1/videos/<saved-remote-id>/content, never redirects.
+
+[profiles.seedance]
+protocol = "ark"
+preset = "seedance-2.5-edit"
+base_url = "https://ark.cn-beijing.volces.com/api/v3"
+model = "doubao-seedance-2-5-260628"
+api_key_env = "ARK_API_KEY"
+transport = "tos"
+
+# A relay is a distinct profile with a matching official protocol and preset.
+# [profiles.grok_relay]
+# protocol = "xai"
+# preset = "grok-edit"
+# base_url = "https://your-relay.example/v1"
+# model = "your-grok-edit-model-alias"
+# api_key_env = "GROK_RELAY_API_KEY"
+# transport = "tos"
+
+[tos]
+endpoint = "https://tos-cn-beijing.volces.com"
+region = "cn-beijing"
+bucket = "your-existing-private-bucket"
+prefix = "mcsfx"
+access_key_env = "TOS_ACCESS_KEY_ID"
+secret_key_env = "TOS_SECRET_ACCESS_KEY"
+security_token_env = "TOS_SECURITY_TOKEN"
+expires_seconds = 345600
+
+[tools]
+# ffmpeg = 'C:\tools\ffmpeg\bin\ffmpeg.exe'
+# ffprobe = 'C:\tools\ffmpeg\bin\ffprobe.exe'
+
+[runtime]
+# state_dir = 'D:\mcsfx-state'
+poll_interval = 5
+wait_timeout = 600
